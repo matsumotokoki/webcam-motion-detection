@@ -9,6 +9,10 @@ from PIL import Image
 from datetime import datetime
 import pytz
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+
 app = Flask(__name__)
 
 line_notify_token = "YOUR_DEFAULT_LINE_NOTIFY_TOKEN"
