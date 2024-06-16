@@ -1,5 +1,6 @@
 FROM python:3.9-slim
 
+ENV TF_CPP_MIN_LOG_LEVEL=2
 WORKDIR /app
 
 # 必要なパッケージをインストール

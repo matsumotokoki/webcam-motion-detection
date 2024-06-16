@@ -10,7 +10,8 @@ from datetime import datetime
 import pytz
 
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # 1 = INFO, 2 = WARNING, 3 = ERROR
+import tensorflow as tf
 
 
 app = Flask(__name__)
