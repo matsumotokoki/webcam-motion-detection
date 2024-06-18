@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 from transformers import pipeline
 from googletrans import Translator
 import requests
@@ -8,9 +11,6 @@ from flask import Flask, render_template, request, jsonify
 from PIL import Image
 from datetime import datetime
 import pytz
-
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 app = Flask(__name__)
@@ -94,4 +94,4 @@ def notify():
     return jsonify({"status": "success"})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='12.0.0.1', port=5000)
