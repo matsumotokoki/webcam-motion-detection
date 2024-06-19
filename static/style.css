@@ -21,7 +21,12 @@ body {
 }
 
 h1 {
+    color: #4CAF50; /* 見出しに色を追加 */
     margin-bottom: 20px;
+}
+
+h2 {
+    color: #2196F3; /* サブ見出しに色を追加 */
 }
 
 .content {
@@ -33,17 +38,18 @@ h1 {
 .video-container {
     flex: 1;
     text-align: center;
-    border-right: 2px solid #ccc;  /* 境界線を追加 */
-    padding-right: 20px;          /* 境界線の内側に余白を追加 */
-    margin-right: 20px;           /* 境界線の外側に余白を追加 */
+    border-right: 2px solid #ddd;  /* 境界線の色を調整 */
+    padding-right: 20px;
+    margin-right: 20px;
 }
 
 .settings-container {
     flex: 0 0 300px;
-    background-color: #fafafa;   /* 背景色を追加 */
+    background-color: #fafafa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #4CAF50; /* 左側にアクセントカラーを追加 */
 }
 
 form {
@@ -60,6 +66,19 @@ input, button {
     width: 100%;
     margin-bottom: 10px;
     box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50; /* ボタンに色を追加 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049; /* ボタンのホバー時の色を追加 */
 }
 
 video {
