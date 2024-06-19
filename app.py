@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 from transformers import pipeline
 from googletrans import Translator
 import requests
@@ -9,20 +12,18 @@ from PIL import Image
 from datetime import datetime
 import pytz
 
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
 
 app = Flask(__name__)
 
 line_notify_token = "YOUR_DEFAULT_LINE_NOTIFY_TOKEN"
 last_notification_time = 0
-notification_interval = 5  # Default interval in seconds
-motion_threshold = 0.2     # Default motion threshold
+notification_interval = 10  # Default interval in seconds
+motion_threshold = 0.3     # Default motion threshold
 timezone = pytz.timezone("Asia/Tokyo")
 
 # Setup caption generation pipeline
 captioner = pipeline("image-to-text", model="Salesforce/blip-image-captioning-base")
+# captioner = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
 # Function to translate English text to Japanese
 def translate_en_to_ja(text):
@@ -94,4 +95,5 @@ def notify():
     return jsonify({"status": "success"})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
