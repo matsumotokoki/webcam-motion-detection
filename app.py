@@ -15,7 +15,7 @@ import pytz
 
 app = Flask(__name__)
 
-line_notify_token = "YOUR_DEFAULT_LINE_NOTIFY_TOKEN"
+line_notify_token = ""
 last_notification_time = 0
 notification_interval = 10  # Default interval in seconds
 motion_threshold = 0.3     # Default motion threshold
